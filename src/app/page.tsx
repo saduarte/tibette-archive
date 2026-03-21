@@ -12,6 +12,7 @@ type Prompt = {
   requestedBy: string;
 };
 
+
 function statusPillClass(status: FicStatus) {
   const base =
     "px-2.5 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider border ";
@@ -159,16 +160,16 @@ export default function Home() {
               </Link>
 
               <div className="group relative inline-block w-full sm:w-auto">
-                <button className="w-full cursor-default rounded-2xl border border-border bg-surface2 px-6 py-4 text-sm font-bold text-muted shadow-sm transition sm:w-auto">
-                  🏆 Awards 2026
+                <button className="flex w-full cursor-default items-center justify-center gap-2 rounded-2xl border border-border bg-surface2 px-6 py-4 text-sm font-bold text-muted shadow-sm transition sm:w-auto">
+                  <img src="/icons/labrys.png" alt="" className="h-4 w-4" />
+                  <span>Awards 2026</span>
                 </button>
 
                 <div className="pointer-events-none absolute bottom-full left-1/2 z-50 mb-3 w-64 -translate-x-1/2 scale-95 rounded-2xl border border-border bg-surface p-4 text-xs opacity-0 shadow-2xl transition-all group-hover:scale-100 group-hover:opacity-100">
                   <p className="mb-1 font-bold italic tracking-tight text-brand">
                     The official voting opens soon!
                   </p>
-                  Add your favorite fics now so they can appear on the nominees
-                  list!
+                  Add your favorite fics now so they can appear on the nominees list!
                 </div>
               </div>
             </div>
@@ -261,8 +262,8 @@ export default function Home() {
         <div className="rounded-3xl border border-border/70 bg-surface/85 p-2 shadow-[0_20px_45px_rgba(110,102,88,0.10)] backdrop-blur-2xl md:p-3">
           <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
             <div className="relative flex-1">
-              <span className="absolute left-5 top-1/2 -translate-y-1/2 text-muted opacity-50">
-                🔍
+              <span className="absolute left-5 top-1/2 -translate-y-1/2 opacity-50">
+                <img src="/icons/search.png" alt="" className="h-5 w-5" />
               </span>
 
               <input
@@ -280,11 +281,10 @@ export default function Home() {
                   onClick={() =>
                     setScope((s) => ({ ...s, [key]: !val }))
                   }
-                  className={`rounded-xl px-4 py-2 text-[10px] font-bold transition-all md:text-xs ${
-                    val
-                      ? "bg-brand text-white shadow-sm shadow-brand/20"
-                      : "bg-transparent text-muted hover:bg-surface2"
-                  }`}
+                  className={`rounded-xl px-4 py-2 text-[10px] font-bold transition-all md:text-xs ${val
+                    ? "bg-brand text-white shadow-sm shadow-brand/20"
+                    : "bg-transparent text-muted hover:bg-surface2"
+                    }`}
                 >
                   {key.charAt(0).toUpperCase() + key.slice(1)}
                 </button>
